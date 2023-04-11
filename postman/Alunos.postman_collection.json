@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "85b55304-e5ce-43cf-a12e-2b1ebc672e75",
+		"name": "Alunos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ListarAlunos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/alunos",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"alunos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListarAluno",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verificar os dados recebidos\",()=>{\r",
+							"\r",
+							"pm.expect(pm.response.code).to.equal(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/alunos/444",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"alunos",
+						"444"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IncluirAlunos1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"matricula\" : 123,\r\n    \"nome\" : \"Maria da Silva\",\r\n    \"telefone\" : \"1234-7777\",\r\n    \"email\" : \"maria@gmail.com\",\r\n    \"dataCadastro\": \"2023-04-10T20:53:12.0Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/alunos",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"alunos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IncluirAlunos2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"matricula\" : 444,\r\n    \"nome\" : \"Jose da Silva\",\r\n    \"telefone\" : \"1111-5555\",\r\n    \"email\" : \"Jose@gmail.com\",\r\n    \"dataCadastro\": \"2023-04-10T20:53:12.0Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/alunos",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"alunos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AlterarAluno1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"matricula\" : 123,\r\n    \"nome\" : \"Maria da Silva ALTERADO\",\r\n    \"telefone\" : \"1234-0000\",\r\n    \"email\" : \"maria@hotmail.com\",\r\n    \"dataCadastro\": \"2023-04-10T20:53:12.0Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/alunos",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"alunos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletarAluno1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"matricula\" : 123,\r\n    \"nome\" : \"Maria da Silva ALTERADO\",\r\n    \"telefone\" : \"1234-0000\",\r\n    \"email\" : \"maria@hotmail.com\",\r\n    \"dataCadastro\": \"2023-04-10T20:53:12.0Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/alunos/123",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"alunos",
+						"123"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
